@@ -50,7 +50,7 @@ public class HotelManagement {
         }
     }
     
-    public static void createRoom(Hotel hotel) {
+    public static void createRoom() {
         System.out.println("What Room type would you like\n" +
                "1. for Basic Suite\n" + 
                "2. for Junior Suite\n" +
