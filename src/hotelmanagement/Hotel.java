@@ -53,9 +53,10 @@ public class Hotel {
     public StringBuilder listRooms() {
         StringBuilder sb = new StringBuilder();
         
-        for(int i = 0; i < 10; i++) {
-              sb.append(i)
-                .append("\n");
+        for(int i = 0; i < rooms.size(); i++) {
+            sb.append(this.getRooms().get(i).getRoomId())
+              .append(this.getRooms().get(i).getStartDate())
+              .append(this.getRooms().get(i).getCustomer().getName());
         }
         return sb;
     }
