@@ -12,13 +12,13 @@ import java.util.Scanner;
  */
 public class HotelManagement {
     static Scanner scan = new Scanner(System.in);
-    static Hotel hotel = new Hotel();
+    Hotel hotel = new Hotel();
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        Hotel hotel = new Hotel();
         
         String next = "y";
         
@@ -31,7 +31,7 @@ public class HotelManagement {
 
             switch(menu) {
                 case 1:  
-                    createRoom();   
+                    hotel = createRoom(hotel);   
                     break;
                 case 2: 
                     orderService();
@@ -40,7 +40,7 @@ public class HotelManagement {
                     showBill();
                     break;
                 case 4:
-                    System.out.println("Room List: " + hotel.listRooms());
+                    System.out.println(hotel.listRooms());
                     break;
                 default:   
                   next = "n";
@@ -50,7 +50,7 @@ public class HotelManagement {
         }
     }
     
-    public static void createRoom() {
+    public static Hotel createRoom(Hotel hotel) {
         System.out.println("What Room type would you like\n" +
                "1. for Basic Suite\n" + 
                "2. for Junior Suite\n" +
@@ -83,7 +83,7 @@ public class HotelManagement {
         
         switch(roomType) {
             case 1:
-                hotel.setRooms(new Basic(roomId, date, date, customerId, customerName, customerPhone, customerEmail));
+                hotel.setRooms(new Basic(12, date, date, 12, "Greg", "123456", "454545@.com"));
                 break;
             case 2:
                 break;

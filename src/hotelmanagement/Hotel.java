@@ -6,6 +6,7 @@
 package hotelmanagement;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -53,10 +54,14 @@ public class Hotel {
     public StringBuilder listRooms() {
         StringBuilder sb = new StringBuilder();
         
-        for(int i = 0; i < rooms.size(); i++) {
-            sb.append(this.getRooms().get(i).getRoomId())
-              .append(this.getRooms().get(i).getStartDate())
-              .append(this.getRooms().get(i).getCustomer().getName());
+        for(int i = 0; i < this.rooms.size(); i++) {
+            int roomId = rooms.get(i).getRoomId();
+            String customerName = rooms.get(i).getCustomer().getName();
+            String customerEmail = rooms.get(i).getCustomer().getEmail();
+            
+            sb.append("Room Id: ").append(roomId).append("\n")
+              .append("Name: ").append(customerName).append("\n")
+              .append("Email: ").append(customerEmail).append("\n");
         }
         return sb;
     }
